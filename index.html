@@ -19,11 +19,22 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
 <style>
 html{scroll-behavior:smooth}
-body{margin:0;background:#0d0d0d}
+body{margin:0;background:#0d0d0d;word-break:keep-all;overflow-wrap:break-word}
+h1,h2,h3{text-wrap:balance}
+p,div,span{text-wrap:pretty}
 a{color:inherit}
 a:hover{opacity:.85}
 img{max-width:100%}
-@media (max-width:640px){h1{font-size:34px !important}}
+@media (max-width:640px){
+h1{font-size:34px !important}
+.st{padding:8px 6px !important}
+.st>div:first-child{white-space:nowrap}
+.eq{grid-template-columns:minmax(0,1fr) auto !important;grid-template-areas:"id status" "task time" !important;row-gap:2px !important;padding:8px 10px !important}
+.eq>div:nth-child(1){grid-area:id}
+.eq>div:nth-child(2){grid-area:task;color:#5f5a4e}
+.eq>div:nth-child(3){grid-area:status;text-align:right}
+.eq>div:nth-child(4){grid-area:time;color:#5f5a4e}
+}
 </style>
 </head>
 <body>
@@ -45,7 +56,7 @@ img{max-width:100%}
 <header style="max-width: 1080px; margin: 0 auto; padding: 72px 24px 88px; display: flex; flex-direction: column; gap: 28px">
 <div style="font-size: 15px; color: #d2cbb8">외주 개발 · 대학병원 전산 시스템 개발 6년</div>
 <h1 style="margin: 0; font-size: 46px; line-height: 1.3; font-weight: 700; letter-spacing: -0.03em">프로그램을 만드는 게 아니라,<br><span style="box-shadow: inset 0 -14px 0 #d4af3766">일이 풀리게</span> 만들어요.</h1>
-<p style="margin: 0; max-width: 560px; color: #d2cbb8">버벅이던 엑셀, 매일 반복하는 클릭, 찾기 힘든 창고 물건까지. 현장에서 실제로 쓰일 만큼만 만들어 드려요.</p>
+<p style="margin: 0; max-width: 560px; color: #d2cbb8">버벅이던 엑셀, 매일 반복하는 클릭, 찾기 힘든 창고 물건까지. 현장에서 <span style="white-space: nowrap">실제로 쓰일 만큼만 만들어 드려요.</span></p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#contact" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 8px; background: #d4af37; color: #0d0d0d; text-decoration: none; font-weight: 700">상담 문의하기</a>
 <a href="resume.pdf" download="강훈민_이력서.pdf" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 8px; border: 1px solid #4d4738; color: #ffffff; text-decoration: none; font-weight: 500">이력서 PDF 받기</a>
@@ -62,9 +73,9 @@ img{max-width:100%}
 <section id="do" style="display: flex; flex-direction: column; gap: 24px">
 <div style="display: flex; align-items: center; gap: 12px"><span style="display: inline-flex; width: 30px; height: 30px; border-radius: 50%; background: #0d0d0d; color: #ffffff; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600">1</span><h2 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.02em">하는 일</h2></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 22px"><div style="font-weight: 700; margin-bottom: 6px">대용량 데이터 조회</div><div style="color: #5f5a4e">엑셀로 안 열리는 수십만 줄 데이터도 바로 검색하고 볼 수 있게 만들어요.</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 22px"><div style="font-weight: 700; margin-bottom: 6px">반복 업무 자동화</div><div style="color: #5f5a4e">매일 손으로 하던 클릭과 입력을 화면 인식으로 자동으로 처리해요.</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 22px"><div style="font-weight: 700; margin-bottom: 6px">업무용 웹앱</div><div style="color: #5f5a4e">창고나 현장 관리를 휴대폰으로 할 수 있게 만들어요.</div></div>
+<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 22px"><div style="font-weight: 700; margin-bottom: 6px">대용량 데이터 조회</div><div style="color: #5f5a4e">엑셀로 안 열리는 수십만 줄 데이터도 바로 검색하고 볼 수 있게 만들어 드립니다.</div></div>
+<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 22px"><div style="font-weight: 700; margin-bottom: 6px">반복 업무 자동화</div><div style="color: #5f5a4e">매일 손으로 하던 클릭과 입력, 화면 인식으로 자동으로 처리해요.</div></div>
+<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 22px"><div style="font-weight: 700; margin-bottom: 6px">업무용 웹앱</div><div style="color: #5f5a4e">창고나 현장 관리를 휴대폰으로 할 수 있게 만들어 드려요.</div></div>
 </div>
 </section>
 
@@ -83,14 +94,13 @@ img{max-width:100%}
 <div style="display: grid; grid-template-columns: 90px minmax(0, 1fr) 44px 80px 88px; gap: 8px; padding: 6px 10px"><div>거래처 A-092</div><div>품목-03</div><div style="text-align: right">8</div><div style="text-align: right; background: #f6ecc8">510,000</div><div style="text-align: right">4,080,000</div></div>
 </div></div>
 <div style="align-self: flex-end; background: #0d0d0d; color: #ffffff; border-radius: 6px; padding: 6px 12px; display: flex; gap: 12px; flex-wrap: wrap"><span style="color: #d2cbb8">3칸 선택</span><span>평균 291,667</span><span>합계 875,000</span></div>
-<div style="font-size: 12px; color: #5f5a4e">실제 납품 화면을 바탕으로 다시 그린 예시예요. 항목명과 데이터는 가상이에요.</div>
 </div>
 <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
 <h3 style="margin: 0; font-size: 21px; font-weight: 700">대용량 데이터 뷰어</h3>
 <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px"><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">50만 건</span><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">서버 없이 브라우저 처리</span><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">직원별 권한</span></div>
 <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
 <div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">상황</div>여러 직원이 함께 쓰는 구글 시트에서 필터만 걸면 화면이 심하게 버벅였어요. 원하는 데이터를 보는 것조차 힘들었죠.</div>
-<div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">선택</div>인프라 구성안 6가지를 비교해서 견적과 함께 제안했고, 고객 상황에 맞는 방향으로 골랐어요.</div>
+<div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">선택</div>인프라 구성안 6가지를 비교해서 견적과 함께 제안했고, 고객 상황에 맞는 방향으로 골랐습니다.</div>
 <div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">결과</div><span style="font-weight: 600">지금은 50만 건에 필터를 걸어도 2초 안에 결과가 나와요.</span></div>
 </div>
 </div>
@@ -103,7 +113,7 @@ img{max-width:100%}
 <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px"><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">사진으로 수납공간 인식</span><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">물건 검색</span><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">출력용 배치도</span></div>
 <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
 <div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">상황</div>옷, 약, 공구처럼 물건이 많고 종류가 복잡한 창고일수록, 뭐가 어디 있는지 찾기가 어렵더라고요.</div>
-<div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">만든 것</div>사진을 찍으면 수납공간을 인식하고 물건 위치를 기록해 주는 앱이에요. 휴대폰으로 쓸 수 있고요.</div>
+<div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">만든 것</div>사진을 찍으면 수납공간을 인식하고 물건 위치를 기록해 주는 앱이에요. 휴대폰으로 쓸 수 있죠.</div>
 <div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">결과</div><span style="font-weight: 600">물건을 검색하면 어느 칸에 있는지 바로 나와요.</span> 칸마다 번호가 붙은 사진을 출력해 두면, 휴대폰을 안 꺼내도 벽에 붙여둔 한 장으로 찾을 수 있어요.</div>
 </div>
 <a href="https://kery27.github.io/udigo/" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 8px; background: #0d0d0d; color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px">직접 써보기 →</a>
@@ -114,17 +124,17 @@ img{max-width:100%}
 <div style="flex: 1 1 460px; min-width: 0; border-radius: 10px; background: #f7f6f2; border: 1px solid #e3dfd3; padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; font-variant-numeric: tabular-nums">
 <div style="display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap"><span style="font-weight: 600">장비 현황</span><span style="color: #5f5a4e">10:42 기준</span></div>
 <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">전체</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600">6</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">작업 중</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #1d4ed8">3</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">완료</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600">2</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">오류</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #c2410c">1</div></div>
+<div class="st" style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">전체</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600">6</div></div>
+<div class="st" style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">작업 중</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #1d4ed8">3</div></div>
+<div class="st" style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">완료</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600">2</div></div>
+<div class="st" style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">오류</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #c2410c">1</div></div>
 </div>
 <div style="background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; border-radius: 6px; padding: 8px 10px"><span style="font-weight: 600">PC-03</span> 데이터 수집 중 오류 · 텔레그램 알림 전송됨</div>
 <div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px">
-<div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-01</div><div>데이터 수집</div><div style="color: #1e40af">작업 중</div><div style="text-align: right">13:33:45</div></div>
-<div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-02</div><div>리포트 생성</div><div style="color: #1e40af">작업 중</div><div style="text-align: right">13:09:51</div></div>
-<div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-03</div><div>데이터 수집</div><div style="color: #9a3412">오류</div><div style="text-align: right">0:19:25</div></div>
-<div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px"><div style="font-weight: 600">PC-04</div><div>파일 백업</div><div style="color: #5f5a4e">완료</div><div style="text-align: right">10:38:15</div></div>
+<div class="eq" style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-01</div><div>데이터 수집</div><div style="color: #1e40af">작업 중</div><div style="text-align: right">13:33:45</div></div>
+<div class="eq" style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-02</div><div>리포트 생성</div><div style="color: #1e40af">작업 중</div><div style="text-align: right">13:09:51</div></div>
+<div class="eq" style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-03</div><div>데이터 수집</div><div style="color: #9a3412">오류</div><div style="text-align: right">0:19:25</div></div>
+<div class="eq" style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px"><div style="font-weight: 600">PC-04</div><div>파일 백업</div><div style="color: #5f5a4e">완료</div><div style="text-align: right">10:38:15</div></div>
 </div>
 <div style="font-size: 12px; color: #5f5a4e">실제 운영 화면을 바탕으로 다시 그린 예시예요. 장비명과 작업 내용은 가상이에요.</div>
 </div>
@@ -132,9 +142,9 @@ img{max-width:100%}
 <h3 style="margin: 0; font-size: 21px; font-weight: 700">장비 모니터링 대시보드</h3>
 <div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px"><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">구글 시트 기반</span><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">텔레그램 알림</span><span style="padding: 3px 10px; border-radius: 999px; background: #ece8dc">외부에서 확인</span></div>
 <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px">
-<div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">상황</div>여러 대의 컴퓨터로 작업을 돌리다 보면, 한 대에서 문제가 생겨도 바로 알아채기가 어려워요.</div>
+<div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">상황</div>여러 대의 컴퓨터로 작업을 돌리다 보면, 한 대에서 문제가 생겨도 바로 알아채기가 쉽지 않죠.</div>
 <div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">만든 것</div>장비마다 작업 상태를 감지해서, 에러가 나면 텔레그램으로 알림이 오고 대시보드에서 어떤 장비가 어디까지 작업했는지 한 화면에 보여요.</div>
-<div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">결과</div><span style="font-weight: 600">자리에 없어도, 밖에 있어도 문제가 생기면 바로 알고 대응할 수 있어요.</span></div>
+<div><div style="font-size: 13px; font-weight: 600; color: #5f5a4e">결과</div><span style="font-weight: 600">자리에 없어도, 밖에 있어도 문제가 생기면 바로 알고 <span style="white-space: nowrap">대응할 수 있어요.</span></span></div>
 </div>
 </div>
 </article>
@@ -146,8 +156,8 @@ img{max-width:100%}
 <p style="margin: 0; font-size: 22px; line-height: 1.5; font-weight: 700; letter-spacing: -0.02em">꼭 필요한 만큼만,<br>실제로 쓰일 만큼만.</p>
 </div>
 <div style="flex: 2 1 480px; display: flex; flex-direction: column; gap: 16px">
-<p style="margin: 0">오랫동안 저는 코드만 짜던 사람이었어요. 대학병원 전산실에서는 쏟아지는 요구사항을 프로그램으로 옮겼고, 그 뒤로는 제게 필요한 프로그램을 직접 만들어 썼고요. 남이 겪는 문제를 제 코드로 풀어 드리기 시작한 건 최근이에요.</p>
-<p style="margin: 0">그러면서 생각이 바뀌더라고요. 중요한 건 코드가 아니라 문제가 실제로 풀리느냐예요. 병원에서 끝도 없는 요구사항을 받아 만들면서도 느꼈어요. 많이 만든다고 일이 편해지는 건 아니더라고요. 그래서 어떤 기술을 쓸지, 어디까지 만들지를 주어진 상황 안에서 가장 알맞게 골라요.</p>
+<p style="margin: 0">오랫동안 저는 코드만 짜던 사람이었어요. 대학병원 전산실에서는 쏟아지는 요구사항을 프로그램으로 옮겼고, 그 뒤로는 제게 필요한 프로그램을 직접 만들어 썼어요. 남이 겪는 문제를 제 코드로 풀어 드리기 시작한 건 최근입니다.</p>
+<p style="margin: 0">그러면서 생각이 바뀌더라고요. 중요한 건 코드가 아니라 문제가 실제로 풀리느냐죠. 병원에서 끝도 없는 요구사항을 받아 만들면서도 느꼈어요. 많이 만든다고 일이 편해지는 건 아니더라고요. 그래서 어떤 기술을 쓸지, 어디까지 만들지는 주어진 상황 안에서 가장 알맞게 고릅니다.</p>
 <div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 6px">
 <div style="font-size: 13px; font-weight: 600; color: #5f5a4e">현장에서</div>
 <p style="margin: 0">요즘은 자영업 사장님들이 일하시는 모습을 가까이서 자주 보고 있어요. 어디에 IT가 들어가면 일이 편해질지, 늘 그걸 찾으면서 다녀요.</p>
@@ -160,7 +170,7 @@ img{max-width:100%}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
 <div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 20px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5f5a4e">STEP 1</div><div style="font-weight: 700">상담</div><div style="color: #5f5a4e; font-size: 15px">지금 겪고 계신 상황을 편하게 말씀해 주세요. 상담은 무료예요.</div></div>
 <div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 20px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5f5a4e">STEP 2</div><div style="font-weight: 700">견적</div><div style="color: #5f5a4e; font-size: 15px">어디까지 만들지 함께 정하고 견적을 드려요.</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 20px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5f5a4e">STEP 3</div><div style="font-weight: 700">개발</div><div style="color: #5f5a4e; font-size: 15px">정한 범위대로 만들어 드려요.</div></div>
+<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 20px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5f5a4e">STEP 3</div><div style="font-weight: 700">개발</div><div style="color: #5f5a4e; font-size: 15px">정한 범위대로 딱 그만큼만 만들어 드립니다.</div></div>
 <div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 12px; padding: 20px"><div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #5f5a4e">STEP 4</div><div style="font-weight: 700">수정 · 유지보수</div><div style="color: #5f5a4e; font-size: 15px">끝난 뒤에도 같이 봐 드려요.</div></div>
 </div>
 </section>
