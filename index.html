@@ -25,7 +25,16 @@ p,div,span{text-wrap:pretty}
 a{color:inherit}
 a:hover{opacity:.85}
 img{max-width:100%}
-@media (max-width:640px){h1{font-size:34px !important}}
+@media (max-width:640px){
+h1{font-size:34px !important}
+.st{padding:8px 6px !important}
+.st>div:first-child{white-space:nowrap}
+.eq{grid-template-columns:minmax(0,1fr) auto !important;grid-template-areas:"id status" "task time" !important;row-gap:2px !important;padding:8px 10px !important}
+.eq>div:nth-child(1){grid-area:id}
+.eq>div:nth-child(2){grid-area:task;color:#5f5a4e}
+.eq>div:nth-child(3){grid-area:status;text-align:right}
+.eq>div:nth-child(4){grid-area:time;color:#5f5a4e}
+}
 </style>
 </head>
 <body>
@@ -115,17 +124,17 @@ img{max-width:100%}
 <div style="flex: 1 1 460px; min-width: 0; border-radius: 10px; background: #f7f6f2; border: 1px solid #e3dfd3; padding: 16px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; line-height: 1.5; font-variant-numeric: tabular-nums">
 <div style="display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap"><span style="font-weight: 600">장비 현황</span><span style="color: #5f5a4e">10:42 기준</span></div>
 <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">전체</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600">6</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">작업 중</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #1d4ed8">3</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">완료</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600">2</div></div>
-<div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">오류</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #c2410c">1</div></div>
+<div class="st" style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">전체</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600">6</div></div>
+<div class="st" style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">작업 중</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #1d4ed8">3</div></div>
+<div class="st" style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">완료</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600">2</div></div>
+<div class="st" style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px; padding: 8px 10px"><div style="color: #5f5a4e">오류</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 18px; font-weight: 600; color: #c2410c">1</div></div>
 </div>
 <div style="background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; border-radius: 6px; padding: 8px 10px"><span style="font-weight: 600">PC-03</span> 데이터 수집 중 오류 · 텔레그램 알림 전송됨</div>
 <div style="background: #ffffff; border: 1px solid #e3dfd3; border-radius: 6px">
-<div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-01</div><div>데이터 수집</div><div style="color: #1e40af">작업 중</div><div style="text-align: right">13:33:45</div></div>
-<div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-02</div><div>리포트 생성</div><div style="color: #1e40af">작업 중</div><div style="text-align: right">13:09:51</div></div>
-<div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-03</div><div>데이터 수집</div><div style="color: #9a3412">오류</div><div style="text-align: right">0:19:25</div></div>
-<div style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px"><div style="font-weight: 600">PC-04</div><div>파일 백업</div><div style="color: #5f5a4e">완료</div><div style="text-align: right">10:38:15</div></div>
+<div class="eq" style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-01</div><div>데이터 수집</div><div style="color: #1e40af">작업 중</div><div style="text-align: right">13:33:45</div></div>
+<div class="eq" style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-02</div><div>리포트 생성</div><div style="color: #1e40af">작업 중</div><div style="text-align: right">13:09:51</div></div>
+<div class="eq" style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #f0ede5"><div style="font-weight: 600">PC-03</div><div>데이터 수집</div><div style="color: #9a3412">오류</div><div style="text-align: right">0:19:25</div></div>
+<div class="eq" style="display: grid; grid-template-columns: 60px minmax(0, 1fr) 70px 70px; gap: 8px; padding: 6px 10px"><div style="font-weight: 600">PC-04</div><div>파일 백업</div><div style="color: #5f5a4e">완료</div><div style="text-align: right">10:38:15</div></div>
 </div>
 <div style="font-size: 12px; color: #5f5a4e">실제 운영 화면을 바탕으로 다시 그린 예시예요. 장비명과 작업 내용은 가상이에요.</div>
 </div>
