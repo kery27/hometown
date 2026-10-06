@@ -59,12 +59,14 @@ img{max-width:100%}
 @media (prefers-reduced-motion:no-preference){
 .hero-art .u-vanish{animation:u-vanish 1.2s ease-in 8.70s 1 both}
 .hero-art .u-thread{animation:u-thread 10.19s 0.3s 1 both,u-reel 0.7s cubic-bezier(.6,0,.9,.6) 9.90s 1 forwards}
-.hero-art .u-roll{animation:u-roll 1.0s cubic-bezier(.45,0,.25,1) 10.60s 1 both}
+.hero-art .u-roll{animation:u-roll 1.0s cubic-bezier(.45,0,.25,1) 10.60s 1 both,u-dim 1.4s ease-in-out 13.0s 1 forwards}
 @keyframes u-vanish{0%{transform:scale(1);opacity:1}70%{opacity:1}100%{transform:scale(.08);opacity:0}}
 @keyframes u-reel{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-1.05}}
+@keyframes u-dim{0%{opacity:1}100%{opacity:.6}}
 @keyframes u-roll{0%{transform:translateX(0) rotate(0deg)}100%{transform:translateX(-140px) rotate(-129deg)}}
 }
 @media (prefers-reduced-motion:reduce){
+.hero-art .u-roll{opacity:.6}
 .hero-art .u-move,.hero-art .u-thread{display:none}
 .hero-art .u-roll{transform:translateX(-140px)}
 }
